@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Bevellier;
+    src: url(../fonts/Bevellier-Variable.woff2);
+}
+
+@theme {
+    --color-flow-100: #EDF4C2;
+    --color-flow-200: #E7D283;
+    --color-flow-300: #DF9755;
+    --color-flow-400: #EB5A3C;
+    --default-font-family: Bevellier;
+}
+
+*::selection {
+    background-color: var(--color-flow-400);
+    color: black;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    width: 5px;
+}
