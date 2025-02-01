@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   questions: [],
+  correctAnsweredQuestions: [],
 };
 
 const questionsSlice = createSlice({
@@ -11,8 +12,13 @@ const questionsSlice = createSlice({
     setQuestions(state, actions) {
       state.questions = actions.payload;
     },
+
+    setCorrectAnsweredQuestions(state, action) {
+      state.correctAnsweredQuestions.push(action.payload);
+    },
   },
 });
 
 export default questionsSlice.reducer;
-export const { setQuestions } = questionsSlice.actions;
+export const { setQuestions, setCorrectAnsweredQuestions } =
+  questionsSlice.actions;
