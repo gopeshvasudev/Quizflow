@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  useEffect(() => {
+    localStorage.setItem("correctAnsweredQuestions", JSON.stringify([]));
+  }, []);
+
   return (
     <>
       <section className="w-full h-screen flex items-center justify-center flex-col">

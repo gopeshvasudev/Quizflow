@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Toaster } from "react-hot-toast";
 
 import Navbar from "../components/Navbar";
 import useFetchQuizzes from "../hooks/useFetchQuizzes";
-import QuestionContainer, {
-  QuestionContainerSkeleton,
-} from "../components/QuestionContainer";
+import QuestionContainer from "../components/QuestionContainer";
+import QuestionContainerSkeleton from "../components/QuestionContainerSkeleton";
 
 const Quizzes = () => {
   const { handler, loading, error } = useFetchQuizzes();
   const questions = useSelector((store) => store.questions.questions);
 
   useEffect(() => {
+    localStorage.setItem("correctAnsweredQuestions", JSON.stringify([]));
+
     if (questions.length === 0) {
       handler();
     }
@@ -19,9 +21,16 @@ const Quizzes = () => {
 
   return (
     <section className="w-full h-screen p-4 flex flex-col items-center gap-4">
+      <Toaster />
       <Navbar />
 
-      {loading ? <QuestionContainerSkeleton /> : <QuestionContainer />}
+      {loading ? (
+        <QuestionContainerSkeleton />
+      ) : error ? (
+        <h6 className="text-xl tracking-wide text-center">{error}</h6>
+      ) : (
+        <QuestionContainer />
+      )}
     </section>
   );
 };

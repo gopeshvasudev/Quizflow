@@ -19,5 +19,11 @@
 }
 
 .scrollbar-none::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
+    background-color: #222;
+}
+
+.scrollbar-none::-webkit-scrollbar-thumb {
+    background-color: var(--color-flow-400);
+    cursor: grab;
 }
