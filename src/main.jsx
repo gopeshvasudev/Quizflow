@@ -6,9 +6,11 @@ import store from "./store/store.js";
 
 import "./index.css";
 import App from "./App.jsx";
+import FallbackLoader from "./components/FallbackLoader.jsx";
 
 const Home = lazy(() => import("./pages/Home.jsx"));
 const Quizzes = lazy(() => import("./pages/Quizzes.jsx"));
+const Result = lazy(() => import("./pages/Result.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -26,8 +28,16 @@ const router = createBrowserRouter([
       {
         path: "/quizzes",
         element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
+          <Suspense fallback={<FallbackLoader />}>
             <Quizzes />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/result",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Result />
           </Suspense>
         ),
       },
