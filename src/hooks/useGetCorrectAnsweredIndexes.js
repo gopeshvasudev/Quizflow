@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import useFetchQuizzes from "./useFetchQuizzes";
 
 const useGetCorrectAnsweredIndexes = () => {
+  const [loading, setLoading] = useState(false);
   const [correctAnsweredQuestionsIndex, setCorrectAnsweredQuestionsIndex] =
     useState([]);
 
@@ -10,6 +11,7 @@ const useGetCorrectAnsweredIndexes = () => {
   const { handler: fetchQuizzesHandler } = useFetchQuizzes();
 
   const handler = () => {
+    setLoading(true);
     //fetching the correct answered questions from the local storage
     let correctAnsweredQuestions = localStorage.getItem(
       "correctAnsweredQuestions"
@@ -24,6 +26,7 @@ const useGetCorrectAnsweredIndexes = () => {
     });
 
     setCorrectAnsweredQuestionsIndex(indexes);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -35,7 +38,7 @@ const useGetCorrectAnsweredIndexes = () => {
     }
   }, [questions]);
 
-  return { correctAnsweredQuestionsIndex };
+  return { correctAnsweredQuestionsIndex, loading };
 };
 
 export default useGetCorrectAnsweredIndexes;

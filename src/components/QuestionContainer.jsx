@@ -30,7 +30,7 @@ const QuestionContainer = () => {
       <div className="w-full h-[12%] flex items-center gap-2">
         <button
           onClick={leaveQuestionHandler}
-          className="w-1/2 h-full px-2 py-2 bg-black text-red-500 text-lg leading-none rounded-lg hover:tracking-widest duration-300 border-2 border-red-500"
+          className="w-1/2 h-full px-2 py-2 bg-black text-red-500 text-lg leading-none rounded-lg hover:tracking-widest duration-300 border-2 border-red-500 cursor-pointer"
         >
           {index !== questions?.length - 1
             ? "Leave Question"
@@ -39,7 +39,7 @@ const QuestionContainer = () => {
 
         <button
           onClick={nextQuestionHandler}
-          className="w-1/2 h-full px-2 py-2 bg-black text-green-500 text-lg leading-none rounded-lg hover:tracking-widest duration-300 border-2 border-green-500"
+          className="w-1/2 h-full px-2 py-2 bg-black text-green-500 text-lg leading-none rounded-lg hover:tracking-widest duration-300 border-2 border-green-500 cursor-pointer"
         >
           {index !== questions?.length - 1 ? "Next Question" : "Submit Quiz"}
         </button>
