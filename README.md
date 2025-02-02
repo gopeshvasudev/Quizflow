@@ -1,8 +1,21 @@
-# React + Vite
+# Quiz | Flow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A quiz game web application**
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React:** for creating the full frontend application.
+- **React router dom:** for handling the routing in react app.
+
+- **React icons:** for adding the icons.
+- **Tailwind CSS:** for adding styling.
+
+- **Redux and Redux toolkit:** for handling state efficiently.
+
+## Features
+
+- **Api Integration:** Used external api for fetching the quiz questions.
+- **Custom hooks:** Created custom hooks for handling api's and some another handling like next question button and also component has to work only task at a time.
+- **Components:** breaked the app into small components so that any component don't get so heavy and work efficiently.
+- **Local storage:** Used local storage for persisting the correct answered questions record.
+- **Error handling:** Handled errors properly so that unexpected behavior won't happen.

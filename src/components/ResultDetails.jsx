@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineDoneAll } from "react-icons/md";
 import { GiTrophy } from "react-icons/gi";
 import { MdReplay } from "react-icons/md";
+import { ImCross } from "react-icons/im";
 
 import { getSummary } from "../utils/utilityFunctions";
 import QuestionNumberCircle from "./QuestionNumberCircle";
@@ -10,7 +11,9 @@ const ResultDetails = ({ correctAnsweredQuestionsIndex }) => {
   return (
     <div className="w-full sm:w-[600px] h-full bg-zinc-950 text-white rounded-lg flex flex-col gap-6 items-center justify-center scrollbar-none overflow-y-auto px-6 py-10">
       <div className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] rounded-full border-4 border-white flex items-center justify-center text-9xl text-flow-400 shrink-0">
-        {correctAnsweredQuestionsIndex?.length < 8 ? (
+        {correctAnsweredQuestionsIndex?.length < 3 ? (
+          <ImCross />
+        ) : correctAnsweredQuestionsIndex.length < 8 ? (
           <MdOutlineDoneAll />
         ) : (
           <GiTrophy />
