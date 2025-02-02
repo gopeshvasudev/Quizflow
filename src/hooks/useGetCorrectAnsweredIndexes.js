@@ -4,6 +4,7 @@ import useFetchQuizzes from "./useFetchQuizzes";
 
 const useGetCorrectAnsweredIndexes = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [correctAnsweredQuestionsIndex, setCorrectAnsweredQuestionsIndex] =
     useState([]);
 
@@ -11,22 +12,27 @@ const useGetCorrectAnsweredIndexes = () => {
   const { handler: fetchQuizzesHandler } = useFetchQuizzes();
 
   const handler = () => {
-    setLoading(true);
-    //fetching the correct answered questions from the local storage
-    let correctAnsweredQuestions = localStorage.getItem(
-      "correctAnsweredQuestions"
-    );
-    correctAnsweredQuestions = JSON.parse(correctAnsweredQuestions) || [];
-
-    //Finding the index of the correct answered questions and setting it into state
-    const indexes = correctAnsweredQuestions?.map((correctQuestion) => {
-      return questions?.findIndex(
-        (question) => question.id === correctQuestion.id
+    try {
+      setLoading(true);
+      //fetching the correct answered questions from the local storage
+      let correctAnsweredQuestions = localStorage.getItem(
+        "correctAnsweredQuestions"
       );
-    });
+      correctAnsweredQuestions = JSON.parse(correctAnsweredQuestions) || [];
 
-    setCorrectAnsweredQuestionsIndex(indexes);
-    setLoading(false);
+      //Finding the index of the correct answered questions and setting it into state
+      const indexes = correctAnsweredQuestions?.map((correctQuestion) => {
+        return questions?.findIndex(
+          (question) => question.id === correctQuestion.id
+        );
+      });
+
+      setCorrectAnsweredQuestionsIndex(indexes);
+    } catch (error) {
+      setError("No Result Found!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -38,7 +44,7 @@ const useGetCorrectAnsweredIndexes = () => {
     }
   }, [questions]);
 
-  return { correctAnsweredQuestionsIndex, loading };
+  return { correctAnsweredQuestionsIndex, loading, error };
 };
 
 export default useGetCorrectAnsweredIndexes;
