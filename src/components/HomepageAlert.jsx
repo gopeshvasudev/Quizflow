@@ -8,7 +8,7 @@ const HomepageAlert = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="fixed top-0 left-0 h-screen w-full z-50 backdrop-blur-sm flex items-center justify-center p-2">
+    <div className="fixed top-0 left-0 h-dvh w-full z-50 backdrop-blur-sm flex items-center justify-center p-2">
       <div className="p-4 rounded-lg bg-zinc-950 text-white flex flex-col items-center gap-4">
         <div className="text-4xl text-flow-400">
           <BiSolidErrorAlt />

@@ -8,7 +8,7 @@ const Result = () => {
     useGetCorrectAnsweredIndexes();
 
   return (
-    <section className="w-full h-screen p-4 flex justify-center">
+    <section className="w-full h-dvh p-4 flex justify-center">
       {loading ? (
         <ResultPageSkeleton />
       ) : error ? (

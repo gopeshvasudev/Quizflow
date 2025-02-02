@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { setHomepageAlert } from "../store/reducers/app.slice";
+import {
+  setHomepageAlert,
+  setIsQuizDetailsReVisible,
+} from "../store/reducers/app.slice";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -10,11 +13,12 @@ const Home = () => {
   useEffect(() => {
     localStorage.setItem("correctAnsweredQuestions", JSON.stringify([]));
     dispatch(setHomepageAlert(false));
+    dispatch(setIsQuizDetailsReVisible(true));
   }, []);
 
   return (
     <>
-      <section className="w-full h-screen flex items-center justify-center flex-col">
+      <section className="w-full h-dvh flex items-center justify-center flex-col">
         <div>
           <h1 className="text-6xl sm:text-8xl py-4 sm:px-10 text-flow-400 font-bold text-center">
             Quiz | Flow

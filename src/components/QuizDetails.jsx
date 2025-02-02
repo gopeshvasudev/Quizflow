@@ -9,7 +9,7 @@ const QuizDetails = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-[url(../assets/bg.webp)] bg-cover bg-no-repeat fixed top-0 left-0 w-full h-screen">
+    <div className="bg-[url(../assets/bg.webp)] bg-cover bg-no-repeat fixed top-0 left-0 w-full h-dvh">
       <div className="w-full h-full bg-black/40 p-4 flex items-center justify-center">
         <div className="w-full sm:w-[600px] h-full rounded-lg bg-zinc-950 flex flex-col gap-10 py-10 px-6 items-center scrollbar-none overflow-y-auto">
           <h1 className="text-5xl tracking-wide text-center font-bold text-flow-400">

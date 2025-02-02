@@ -31,7 +31,7 @@ const Quizzes = () => {
       {isQuizDetailsAreVisible ? (
         <QuizDetails />
       ) : (
-        <section className="w-full h-screen p-4 flex flex-col items-center gap-4">
+        <section className="w-full h-dvh p-4 flex flex-col items-center gap-4">
           {homepageAlert && <HomepageAlert />}
           <Toaster />
           <Navbar />
