@@ -6,10 +6,12 @@ import Navbar from "../components/Navbar";
 import useFetchQuizzes from "../hooks/useFetchQuizzes";
 import QuestionContainer from "../components/QuestionContainer";
 import QuestionContainerSkeleton from "../components/QuestionContainerSkeleton";
+import HomepageAlert from "../components/HomepageAlert";
 
 const Quizzes = () => {
   const { handler, loading, error } = useFetchQuizzes();
   const questions = useSelector((store) => store.questions.questions);
+  const homepageAlert = useSelector((store) => store.app.homepageAlert);
 
   useEffect(() => {
     localStorage.setItem("correctAnsweredQuestions", JSON.stringify([]));
@@ -21,6 +23,7 @@ const Quizzes = () => {
 
   return (
     <section className="w-full h-screen p-4 flex flex-col items-center gap-4">
+      {homepageAlert && <HomepageAlert />}
       <Toaster />
       <Navbar />
 
