@@ -23,7 +23,7 @@ const useNextQuestionHandler = (optionId, index, setIndex) => {
         correctAnsweredQuestions = JSON.parse(correctAnsweredQuestions);
 
         //Adding the new values and updating the storage.
-        correctAnsweredQuestions.push(questions[index]);
+        correctAnsweredQuestions.push({ id: questions[index]?.id });
         localStorage.setItem(
           "correctAnsweredQuestions",
           JSON.stringify(correctAnsweredQuestions)

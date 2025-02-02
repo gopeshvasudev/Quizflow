@@ -25,7 +25,7 @@ const Home = () => {
 
         <Link
           to={"/quizzes"}
-          className="bg-black text-white text-lg rounded-full py-6 px-14 mt-12 font-[Bevellier] duration-300 cursor-pointer border-2 border-white hover:border-flow-400 hover:tracking-widest hover:font-bold overflow-hidden"
+          className="bg-black text-white text-lg rounded-full py-6 px-14 mt-12 duration-300 cursor-pointer border-2 border-white hover:border-flow-400 hover:tracking-widest overflow-hidden"
         >
           Unlock the Challenge
         </Link>
