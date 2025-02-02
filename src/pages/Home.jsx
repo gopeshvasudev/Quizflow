@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { setHomepageAlert } from "../store/reducers/app.slice";
+
 const Home = () => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     localStorage.setItem("correctAnsweredQuestions", JSON.stringify([]));
+    dispatch(setHomepageAlert(false));
   }, []);
 
   return (

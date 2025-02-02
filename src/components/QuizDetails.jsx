@@ -9,9 +9,9 @@ const QuizDetails = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-[url(../assets/bg.jpg)] bg-cover bg-no-repeat fixed top-0 left-0 w-full h-screen">
+    <div className="bg-[url(../assets/bg.webp)] bg-cover bg-no-repeat fixed top-0 left-0 w-full h-screen">
       <div className="w-full h-full bg-black/40 p-4 flex items-center justify-center">
-        <div className="w-full sm:w-[600px] h-full rounded-lg bg-zinc-950 flex flex-col justify-center gap-10 py-4 px-6 items-center scrollbar-none overflow-y-auto">
+        <div className="w-full sm:w-[600px] h-full rounded-lg bg-zinc-950 flex flex-col gap-10 py-10 px-6 items-center scrollbar-none overflow-y-auto">
           <h1 className="text-5xl tracking-wide text-center font-bold text-flow-400">
             Quiz Detials
           </h1>
@@ -29,10 +29,10 @@ const QuizDetails = () => {
             ))}
           </div>
 
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-2">
             <button
               onClick={() => dispatch(setIsQuizDetailsReVisible(false))}
-              className="py-4 px-10 rounded-full text-lg bg-black border-2 border-white duration-300 cursor-pointer hover:border-flow-400 hover:tracking-widest"
+              className="py-4 px-14 rounded-full text-lg bg-black border-2 border-white duration-300 cursor-pointer hover:border-flow-400 hover:tracking-widest"
             >
               Start Quiz
             </button>
@@ -40,8 +40,8 @@ const QuizDetails = () => {
             <Link to={"/"} className="flex items-center">
               <span className="text-lg">
                 <MdReplay />
-              </span>{" "}
-              Back to Homepage
+              </span>
+              Homepage
             </Link>
           </div>
         </div>
